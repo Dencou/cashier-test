@@ -1,0 +1,21 @@
+<mat-card class="product-card" >
+    <div class="product-image" (click)="goToPage()">
+        <img  [src]="product.img" width="100%">
+    </div>
+
+    <div class="product-pricing column">
+        <div class="flex-row bold muted-text">{{product.name}}</div>
+        <div class="flex-row bold muted-text">{{product.price | currency: 'PYG'}}</div>
+        <div class="flex-row">
+            {{product.description}}
+        </div>
+        <div class="flex-row">
+            {{product.id}}
+        </div>
+        <div class="flex-row justified-center align-middle">
+            <button mat-icon-button (click)="product.addQty()"><mat-icon>add</mat-icon></button>
+            <div>{{product.qty}}</div>
+            <button mat-icon-button (click)="product.removeQty()"><mat-icon>remove</mat-icon></button>
+        </div>
+    </div>
+</mat-card>

@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-icon>person_outline</mat-icon> <p>{{loginData}}</p>
+    <mat-icon>attach_money</mat-icon>YOUR BALANCE {{actualbalance}} <p style="display: inline-block;"></p><br>
+    <h3>Price to pay {{totalSum}}</h3>
+    <button (click)="pay()">Pay Selected Products</button>
+
+
+</mat-card>
+
+<mat-card>
+    <h1>ADD BALANCE HERE MOTHERFUCKER</h1>
+    
+    
+    <input [(ngModel)]="updatedBalance" placeholder="ingrese la cantidad a depositar en la cuenta" type="number">
+    <button mat-button (click)="func()">add balance</button>
+</mat-card>

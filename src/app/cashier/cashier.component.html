@@ -1,0 +1,58 @@
+<mat-horizontal-stepper #stepper>
+    <mat-step> 
+        <ng-template matStepLabel>Confirmacion de la compra</ng-template>
+        <div class="div-table" >
+            <div  class="div-table-row" >
+               <div class="div-table-col" align="center">Productos</div>
+               <div class="div-table-col" align="center">Cantidad</div>
+               <div class="div-table-col" align="center">Precio</div>
+               <hr style="width:100%;text-align:left;margin-left:0">
+            </div>  
+            <div class="div-table-row" *ngFor="let product of products">
+                <div class="div-table-col">{{product.name}}</div>
+              <div class="div-table-col">{{product.qty}}</div>
+              <div class="div-table-col">{{product.total | currency: 'PYG'}}</div>
+          </div>
+          <hr style="width:100%;text-align:left;margin-left:0">
+          <div class="div-table-row">
+            <div class="div-table-col">Precio total: {{totalSum | currency:'PYG'}}</div>
+            
+          </div>
+        </div>
+        <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+    </mat-step>
+    <mat-step>
+        <form >
+            <p style="font-size: 23px;">Payment amount: <br> </p>
+            <p>{{totalSum | currency:'PYG'}}</p>
+            <div *ngFor="let cashierIcon of cashierPayIcons" class="iconsInCashier">
+                <img src="{{cashierIcon.icon}}" width="30px" height="30px" alt="pilin">
+            </div><br><br>
+            <ng-template matStepLabel>Confirmacion de pago</ng-template>
+            <div *ngFor="let cashierInput of cashierInputs"> 
+                <div *ngIf="!isArray(cashierInput); else many">
+                    <mat-form-field appearance="fill" >
+                        <mat-label>{{cashierInput.label}}</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                </div>
+                <ng-template #many>
+                    <div style="display: flex;">
+                    <div *ngFor="let input of cashierInput"> 
+                            <mat-form-field appearance="fill" >
+                                <mat-label>{{input.label}}</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+                    </div>
+                </div>
+                </ng-template>
+            </div>
+            <section>
+                <mat-checkbox >He leido y acepto los <a style="color: blue;">Terminos y Condiciones Del Servicio</a></mat-checkbox>
+            </section><br>
+            <button mat-button class="paybutton" (click)="Completed()">Pay {{totalSum | currency:'PYG'}}</button>
+        </form>
+    </mat-step>
+</mat-horizontal-stepper>
