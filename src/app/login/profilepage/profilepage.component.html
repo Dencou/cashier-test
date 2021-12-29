@@ -1,0 +1,64 @@
+
+
+<mat-tab-group class="tab">
+
+    <mat-tab label="User Data">
+        <mat-card>
+        <div><mat-icon>person_outline</mat-icon> <p style="display: inline-block;"> Hello Sr. {{usernameFromService}}</p></div>
+        <mat-icon>attach_money</mat-icon>Your current balance:  {{actualbalance | currency:'PYG '}} <p style="display: inline-block;"></p><br>
+       
+        </mat-card>
+    </mat-tab>
+
+    <mat-tab label="Balance Management">
+        <mat-card>
+            <h1>Add balance</h1>
+            <input [(ngModel)]="updatedBalance" placeholder="ingrese la cantidad a depositar en la cuenta" type="number">
+            <button mat-button (click)="AddFounds()">proceed to pay</button>
+        </mat-card>
+    </mat-tab>
+
+    <mat-tab label="Privacy settings">
+
+        <mat-card style="width: 15%; margin: 10px ; ">
+            <div>
+                <h1>Change Name</h1>
+                <mat-form-field>
+                    <mat-label>New username</mat-label>
+                    <input matInput type="text" [(ngModel)]="username">
+    
+                </mat-form-field><br>
+            <button mat-button (click)="login">Update name</button>
+            </div>
+        </mat-card>
+        
+        <mat-card style="width: 15%; margin: 10px;">
+            <div>
+                <h1>Change Password</h1>
+                <mat-form-field>
+                    <mat-label>Old Password</mat-label>
+                    <input matInput type="password" [(ngModel)]="oldpassword">
+    
+                </mat-form-field><br>
+                <mat-form-field>
+                    <mat-label>New Password</mat-label>
+                    <input [(ngModel)]="password" matInput type="password">
+    
+                </mat-form-field>
+            <button mat-button (click)="updatepassword">Update password</button>
+            </div>
+        </mat-card>
+        
+
+        
+
+    </mat-tab>
+  </mat-tab-group>
+
+
+
+
+
+
+
+

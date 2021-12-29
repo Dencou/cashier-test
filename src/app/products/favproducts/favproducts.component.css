@@ -1,0 +1,9 @@
+.maincard{
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+    margin-right: 50px;
+}
+.maincontent{
+    padding-right: 100px;
+}

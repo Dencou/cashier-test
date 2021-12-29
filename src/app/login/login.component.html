@@ -1,0 +1,30 @@
+<div class="main-div" >
+
+    
+
+    <mat-card class="hola">
+        <p>Register</p>
+
+        <mat-form-field appearance="legacy">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [(ngModel)]="Email"><br>
+        </mat-form-field><br>
+
+        <mat-form-field appearance="legacy">
+            <mat-label>username</mat-label>
+
+            <input matInput [(ngModel)]="username"><br>
+        </mat-form-field><br>
+
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+
+            <input type="password" matInput [(ngModel)]="password">
+        </mat-form-field><br>
+
+        <button mat-raised-button color="primary" (click)="login()">Register</button>
+
+    </mat-card>
+</div>
+
+

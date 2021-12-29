@@ -1,0 +1,22 @@
+.product-card {
+
+    box-shadow: 0px 0px 8px -2px #707070;
+
+    .product-image {
+        width: 100%;
+    }
+    .product-body {
+        word-wrap: break-word;
+        white-space: pre-wrap;
+    }
+    .product-pricing {
+        display: flex;
+    }
+}
+.favbutton{
+    text-align: right;
+    
+}
+.dib{
+    display: inline-block;
+}

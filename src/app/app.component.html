@@ -1,0 +1,30 @@
+<div class="example-container">
+    <mat-toolbar>
+
+        <button (click)="drawer.toggle()" mat-icon-button><mat-icon>menu</mat-icon></button>
+        <span>Menu</span>
+        <button class="loginbtn" [matMenuTriggerFor]="menu" mat-icon-button><mat-icon>person_outline</mat-icon></button>
+        <mat-menu #menu="matMenu" >
+            <button (click)="goToProfile()" mat-menu-item>Profile</button>
+            <button (click)="goToLogin()" mat-menu-item>Sign in</button>
+            
+        </mat-menu>
+        
+    
+    </mat-toolbar>
+    
+    <mat-sidenav-container class="sidenav"> 
+    
+        <mat-sidenav #drawer mode="side">
+            <mat-nav-list>
+                <a style="width: 100px;" mat-list-item [routerLink]="items.route" *ngFor="let items of navItem">{{items.name}}</a>
+              </mat-nav-list>
+        </mat-sidenav> 
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+    </div>
+
+
+

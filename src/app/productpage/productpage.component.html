@@ -1,0 +1,63 @@
+<mat-card>
+    <div style="padding-left: 200px; height: 300px;">
+        <div id="productimg">
+            <h2>{{product.name}}</h2>
+            <img  [src]="product.img" width="200px" height="200px">
+        </div>
+    
+        <div class="productdetail" id="productdetails">
+            <h2>Product Detail</h2>
+            <p>{{product.description}}</p>
+            <h2>Price: {{product.price | currency: 'PYG '}}</h2>
+            <button mat-raised-button color="primary" (click)="product.addQty('Added Successfully')">Add to cart</button>
+        </div>
+        
+    </div>
+    
+    
+    <div class="divTable" style="width: 50%; padding-bottom: 10%; padding-left: 10%;">
+        <div class="divTableBody">
+            <div class="divTableRow">
+                <div class="divTableCell">Description</div>
+                <div class="divTableCell">{{product.description}}</div>
+            </div>
+
+            <div class="divTableRow">
+                <div class="divTableCell">Brand</div>
+                <div class="divTableCell">{{product.brand}}</div>
+            </div>
+            
+            <div class="divTableRow">
+                <div class="divTableCell">Size</div>
+                <div class="divTableCell">{{product.size}}</div>
+            </div>
+        </div>
+    </div>
+    
+
+
+</mat-card> 
+
+
+<div class="box"></div>
+
+<mat-card >
+    <h2>Related Products</h2>
+    <div class="moreproducts" *ngFor="let products of allProducts" (click)="hola()">
+        <mat-card>
+            <img src="{{products.img}}" alt="">
+            <p>{{products.name}}</p>
+            <p>{{products.price | currency:'PYG'}}</p>
+        </mat-card>
+        
+     </div>
+</mat-card>
+
+
+
+
+
+
+
+
+

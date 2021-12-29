@@ -1,0 +1,28 @@
+<div>
+    <mat-card>
+        <h2>My favorite list</h2>
+        <hr>
+        <div *ngFor="let fp of favlist">
+            <div class="maincard" >
+                <img src="{{fp.img}}" alt="" width="100px" height="100px">
+                <p style="padding-right: 8%;">{{fp.name}}</p>
+                <p style="padding-right: 8%;">{{fp.brand}}</p>
+                <p style="padding-right: 8%;">{{fp.description}}</p>
+                <p style="padding-right: 8%;">{{fp.price | currency:'PYG'}}</p>
+                
+                <div style="padding-right: 30%;">
+                    <button mat-button (click)="falsese" >
+                        <mat-icon>highlight_off</mat-icon>
+                    </button>
+                </div>
+                
+
+            </div>
+            <hr>
+        </div>
+        
+        
+        
+
+    </mat-card>
+</div>

@@ -1,0 +1,19 @@
+.products-grid {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+app-product{
+    min-width: 280px;
+    max-width: 300px;
+    margin: 16px 12px;
+}
+
+.f-24 {
+    font-size: 24px;
+}
+.wrapper {
+    padding: 24px 16px;
+}
