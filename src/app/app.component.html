@@ -1,5 +1,5 @@
 <div class="example-container">
-    <mat-toolbar>
+    <mat-toolbar elevation="2">
 
         <button (click)="drawer.toggle()" mat-icon-button><mat-icon>menu</mat-icon></button>
         <span>Menu</span>
@@ -7,6 +7,7 @@
         <mat-menu #menu="matMenu" >
             <button (click)="goToProfile()" mat-menu-item>Profile</button>
             <button (click)="goToLogin()" mat-menu-item>Sign in</button>
+           
             
         </mat-menu>
         

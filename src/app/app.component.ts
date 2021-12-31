@@ -12,6 +12,7 @@ export class AppComponent {
   navItem = [
     {name:"Products", route: '/products'},
     {name:"Cart", route: '/cart'},
+    {name:`Favorite List`, route:`favproducts`}
     
     
   ]
@@ -28,7 +29,10 @@ export class AppComponent {
   goToLogin(){
     this._router.navigate(['./login/'])
   }
+  goToFav(){
+    this._router.navigate(['./favproducts/'])
 
+  }
 }
 
 

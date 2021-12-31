@@ -25,7 +25,6 @@ export class ProductModel {
   }
 
   addQty(msg?) {
-
     this.qty += 1
     msg == null ? '' : alert(msg);
     
